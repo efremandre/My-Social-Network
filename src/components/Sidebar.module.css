@@ -1,0 +1,31 @@
+.sidebar {
+	grid-area: sidebar;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	margin: 5px 0 0 0;
+	padding: 20px;
+	background: #222222;
+}
+
+.nav {}
+
+.nav_list {}
+
+.link,
+.setting_link {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	transition: 0.8s;
+}
+
+.setting_link.active {
+	color: gold;
+}
+
+.link:hover,
+.setting_link:hover {
+	color: rgb(239, 92, 92);
+}

@@ -1,0 +1,30 @@
+.profile {
+	grid-area: content;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	margin: 5px 0 0 10px;
+	overflow: hidden;
+	background: #222222;
+}
+
+.header {
+	position: relative;
+	z-index: 1;
+	height: 160px;
+	background: url('https://sun9-26.userapi.com/7ej4bUUzXhxI0PS9F8PuUVq7iUWUFunH-fJiPw/HwNlgZXf9tI.jpg') 0 0 / cover no-repeat;
+}
+
+.body {
+	position: relative;
+	z-index: 2;
+	margin-top: -10px;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	background: #222222;
+}
+
+.info,
+.post,
+.new_post {
+	margin: 20px;
+}

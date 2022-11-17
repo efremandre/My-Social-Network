@@ -1,23 +1,18 @@
 import React from 'react';
-import MyPosts from '../MyPosts/MyPosts';
+import MyPosts from './MyPosts/MyPosts';
 import classes from './Body.module.css';
+import Info from './Info/Info';
+import Post from './Post/Post';
 
 const Body = () => {
 	return (
 		<div className={classes.body}>
-			<div className={classes.info}>
-				ava+desc
-			</div>
+			<Info />
 			<MyPosts />
-			<div className={classes.new_post}>
-				Post 1
-			</div>
-			<div className={classes.new_post}>
-				Post 2
-			</div>
-			<div className={classes.new_post}>
-				Post 3
-			</div>
+			<Post />
+			<Post />
+			<Post />
+			<Post />
 		</div>
 	)
 }

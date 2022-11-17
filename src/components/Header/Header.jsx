@@ -6,8 +6,8 @@ const Header = () => {
 		<header className={classes.header}>
 			<div className="container">
 				<div className={classes.logotype}>
-					<img className={classes.logo} src="https://sun9-59.userapi.com/impg/sMJ1CkzakaZj7-Tj4k5hLgoLLsQft9QKEKOilQ/aplm6Ot4JYo.jpg?size=200x285&quality=96&sign=4a75eaaf68f2342ed9958ebafef9775f&c_uniq_tag=YLQnC1uRw2Dv7SdlcjBO_ZzvBhptBqpj4qqbqJiGEgI&type=album" alt="Cat" />
-					<p className={classes.logo_text}>MySN</p>
+					<img className={classes.logo} src="./logo.png" alt="" />
+					<p className={classes.logo_text}>My SN</p>
 				</div>
 			</div>
 		</header>

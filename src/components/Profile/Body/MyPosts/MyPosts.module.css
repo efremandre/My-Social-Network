@@ -1,3 +1,74 @@
 .my_post {
 	margin: 20px;
+
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+.textarea_block {
+	position: relative;
+}
+
+.textarea {
+	width: 100%;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 10px;
+	background: #141414;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+}
+
+.button_reset {
+	position: absolute;
+	top: 5px;
+	right: 6px;
+	width: 20px;
+	height: 20px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	border: none;
+	background: transparent;
+	transition: .5s;
+}
+
+.button_reset:hover {
+	cursor: pointer;
+	color: #a70303;
+}
+
+.button_row {
+	display: flex;
+	justify-content: end;
+}
+
+.button {
+	width: 200px;
+	margin: 10px;
+	padding: 10px;
+	font-size: 15px;
+	color: #fff;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	background: #141414;
+	transition: .5s;
+}
+
+.button:last-child {
+	margin-right: 0;
+}
+
+.button:hover {
+	cursor: pointer;
+	opacity: .6;
+}
+
+.button_submit {
+	background: #028902;
 }

@@ -16,8 +16,8 @@ const Post = (props) => {
 				</div>
 			</div>
 			<div className={classes.button}>
-				<span class={classes.like}>{props.like}</span>
-				<span class={classes.dislike}>{props.dislike}</span>
+				<span className={classes.like}>{props.like}</span>
+				<span className={classes.dislike}>{props.dislike}</span>
 			</div>
 		</div>
 	)

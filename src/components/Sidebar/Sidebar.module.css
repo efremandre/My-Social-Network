@@ -21,7 +21,13 @@
 	transition: 0.8s;
 }
 
-.setting_link.active {
+.active {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	transition: 0.8s;
 	color: gold;
 }
 

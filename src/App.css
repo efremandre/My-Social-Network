@@ -32,3 +32,12 @@ li {
 	grid-template-rows: 1fr;
 	grid-template-columns: 2fr 10fr;
 }
+
+.content {
+	grid-area: content;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	margin: 60px 0 0 10px;
+	overflow: hidden;
+	background: #222222;
+}

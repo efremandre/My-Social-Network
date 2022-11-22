@@ -19,6 +19,10 @@ li {
 	margin: 0 auto;
 }
 
+.wrapper-component {
+	padding: 20px;
+}
+
 .grid {
 	display: grid;
 

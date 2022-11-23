@@ -1,5 +1,6 @@
 import React from 'react';
 import c from './Messages.module.css';
+import {NavLink} from "react-router-dom";
 
 const Messages = () => {
     return (
@@ -9,29 +10,41 @@ const Messages = () => {
 
                 <div className={c.dialogsItems}>
                     <ul>
-                        <li className={c.dialog}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Dymich</span>
+                        <li>
+                            <NavLink to='/massages/1' className={c.dialog}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Dymich</span>
+                            </NavLink>
                         </li>
-                        <li className={c.dialog + ' ' + c.active}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Andrey</span>
+                        <li>
+                            <NavLink to='/massages/2' className={c.dialog + ' ' + c.active}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Andrey</span>
+                            </NavLink>
                         </li>
-                        <li className={c.dialog}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Sveta</span>
+                        <li>
+                            <NavLink to='/massages/3' className={c.dialog}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Sveta</span>
+                            </NavLink>
                         </li>
-                        <li className={c.dialog}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Valera</span>
+                        <li>
+                            <NavLink to='/massages/4' className={c.dialog}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Valera</span>
+                            </NavLink>
                         </li>
-                        <li className={c.dialog}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Anna</span>
+                        <li>
+                            <NavLink to='/massages/5' className={c.dialog}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Anna</span>
+                            </NavLink>
                         </li>
-                        <li className={c.dialog}>
-                            <img src="#" alt="Avatar" className={c.avatar}/>
-                            <span className={c.userName}>Max</span>
+                        <li>
+                            <NavLink to='/massages/6' className={c.dialog}>
+                                <img src="#" alt="Avatar" className={c.avatar}/>
+                                <span className={c.userName}>Max</span>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

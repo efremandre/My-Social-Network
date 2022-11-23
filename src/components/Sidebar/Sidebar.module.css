@@ -1,9 +1,10 @@
 .sidebar {
 	grid-area: sidebar;
-	border: 1px solid #424242;
-	border-radius: 10px;
+	min-height: 100%;
 	margin: 60px 0 0 0;
 	padding: 20px;
+	border: 1px solid #424242;
+	border-radius: 10px;
 	background: #222222;
 }
 

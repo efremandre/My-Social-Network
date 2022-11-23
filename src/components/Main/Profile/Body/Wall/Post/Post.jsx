@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Post.module.css';
 
 const Post = (props) => {
-
 	return (
 		<div className={classes.post}>
 			<div className={classes.post_row}>
@@ -15,6 +14,7 @@ const Post = (props) => {
 					<p>{props.message}</p>
 				</div>
 			</div>
+
 			<div className={classes.button}>
 				<span className={classes.like}>{props.like}</span>
 				<span className={classes.dislike}>{props.dislike}</span>

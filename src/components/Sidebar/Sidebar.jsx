@@ -16,7 +16,7 @@ import {NavLink} from "react-router-dom";
 					</li>
 					<li className={classes.item}>
 						<NavLink
-							to="/dialogs"
+							to="/messages"
 							className={getActive}>
 							Messages</NavLink>
 					</li>

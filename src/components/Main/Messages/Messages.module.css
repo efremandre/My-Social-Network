@@ -29,10 +29,6 @@
     background: #000;
 }
 
-.userName {
-
-}
-
 .active {
     font-size: 25px;
     color: gold;
@@ -44,18 +40,10 @@
     background: #141414;
 }
 
-.messages {
-
-}
-
 .item {
     min-height: 30px;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 10px;
     background: #141414;
-}
-
-.message {
-
 }

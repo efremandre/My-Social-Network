@@ -15,7 +15,7 @@ const DialogItems = (props) => {
     )
 }
 
-const Message = (props) => {
+const MessageItems = (props) => {
     return (
         <div className={c.item}>
             <div className={c.userName}></div>
@@ -35,6 +35,8 @@ const Messages = (props) => {
         {id: 6, name: 'Max', avatar: 'https://i.pinimg.com/736x/14/df/bf/14dfbf0e75988b5daa3aaccddba0eb6d.jpg',},
     ]
 
+    const Dialog = dialogsData.map(d => <DialogItems id={d.id} name={d.name} avatar={d.avatar} />);
+
     const messagesData = [
         {id: 1, message: 'Hi',},
         {id: 2, message: 'Hello!',},
@@ -42,25 +44,19 @@ const Messages = (props) => {
         {id: 4, message: 'I fine! Thank you!',},
     ]
 
+    const Message = messagesData.map(m => <MessageItems message={m.message} />);
+
     return (
             <div className='wrapper-component'>
                 <h2 className={c.title}>Messages</h2>
                 <div className={c.dialogs}>
                     <div className={c.dialogsItems}>
                         <ul>
-                            <DialogItems id={dialogsData[0].id} name={dialogsData[0].name} avatar={dialogsData[0].avatar}/>
-                            <DialogItems id={dialogsData[1].id} name={dialogsData[1].name} avatar={dialogsData[1].avatar}/>
-                            <DialogItems id={dialogsData[2].id} name={dialogsData[2].name} avatar={dialogsData[2].avatar} />
-                            <DialogItems id={dialogsData[3].id} name={dialogsData[3].name} avatar={dialogsData[3].avatar} />
-                            <DialogItems id={dialogsData[4].id} name={dialogsData[4].name} avatar={dialogsData[4].avatar} />
-                            <DialogItems id={dialogsData[5].id} name={dialogsData[5].name} avatar={dialogsData[5].avatar} />
+                            {Dialog}
                         </ul>
                     </div>
                     <div className={c.messages}>
-                        <Message message={messagesData[0].message} />
-                        <Message message={messagesData[1].message} />
-                        <Message message={messagesData[2].message} />
-                        <Message message={messagesData[3].message} />
+                        {Message}
                     </div>
                 </div>
             </div>

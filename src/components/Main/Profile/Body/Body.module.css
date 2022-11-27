@@ -1,0 +1,13 @@
+.body {
+	position: relative;
+	z-index: 2;
+	margin-top: -10px;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	background: #222222;
+}
+
+.info,
+.new_post {
+	margin: 20px;
+}

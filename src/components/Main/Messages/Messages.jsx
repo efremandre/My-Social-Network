@@ -44,7 +44,7 @@ const Messages = (props) => {
         {id: 4, message: 'I fine! Thank you!',},
     ]
 
-    const Message = messagesData.map(m => <MessageItems message={m.message} />);
+    const Message = messagesData.map(m => <MessageItems id={m.id} message={m.message} />);
 
     return (
             <div className='wrapper-component'>

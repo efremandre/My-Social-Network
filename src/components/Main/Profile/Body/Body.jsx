@@ -3,11 +3,12 @@ import classes from './Body.module.css';
 import Info from './Info/Info';
 import Wall from './Wall/Wall';
 
-const Body = () => {
+const Body = (props) => {
+
 	return (
 		<div className={classes.body}>
 			<Info />
-			<Wall />
+			<Wall dataPost2 = {props.dataPost} />
 		</div>
 	)
 }

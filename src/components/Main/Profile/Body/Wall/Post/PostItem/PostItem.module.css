@@ -1,0 +1,15 @@
+.text {
+	flex: 1 1 auto;
+	padding: 0 10px;
+}
+
+.text h4 {
+	margin-bottom: 10px;
+	font-weight: 400;
+	color: gold;
+	text-decoration: underline;
+}
+
+.text p {
+	font-size: 16px;
+}

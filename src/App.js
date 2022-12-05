@@ -22,7 +22,7 @@ const App = (props) => {
 					<div className="content">
 						<Routes>
 							<Route path='/profile/' element={<Profile posts={props.posts} />} />
-							<Route path='/messages/*' element={<Messages dialog={props.dialogs} messages={props.messages} />} />
+							<Route path='/messages/*' element={<Messages dialogs={props.dialogs} messages={props.messages} />} />
 							<Route path='/news/' element={<News />} />
 							<Route path='/music/' element={<Music />} />
 							<Route path='/setting/' element={<Setting />} />

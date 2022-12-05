@@ -25,7 +25,7 @@ const MessageItems = (props) => {
 }
 
 const Messages = (props) => {
-    const Dialogs = props.dialog.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
+    const Dialogs = props.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
     const Messages = props.messages.map((m, index) => <MessageItems key={index} id={m.id} message={m.message} />);
 
     return (

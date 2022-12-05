@@ -8,7 +8,7 @@ const Post = (props) => {
 	return (
 		<div className={classes.post} id={props.id}>
 			<div className={classes.post_row}>
-				<Photo avatars={props.avatar}/>
+				<Photo avatar={props.avatar}/>
 				<PostItem name={props.name} message={props.message} />
 			</div>
 			<Button likes={props.likes} dislikes={props.dislikes} />

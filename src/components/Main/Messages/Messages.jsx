@@ -25,8 +25,8 @@ const MessageItems = (props) => {
 }
 
 const Messages = (props) => {
-    const Dialogs = props.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
-    const Messages = props.messages.map((m, index) => <MessageItems key={index} id={m.id} message={m.message} />);
+    const Dialogs = props.dialogs.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
+    const Messages = props.messages.messages.map((m, index) => <MessageItems key={index} id={m.id} message={m.message} />);
 
     return (
             <div className='wrapper-component'>

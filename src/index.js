@@ -1,11 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {rerenderEntreTree} from "./render";
 import state from "./redux/STATE";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( <App state={state} /> );
+rerenderEntreTree(state);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

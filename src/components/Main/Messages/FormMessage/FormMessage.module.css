@@ -1,0 +1,47 @@
+.textarea_block {
+}
+
+.textarea {
+	width: 100%;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 10px;
+	background: #141414;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+}
+
+.button_row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button {
+	width: 200px;
+	margin: 10px;
+	padding: 10px;
+	font-size: 15px;
+	color: #fff;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	background: #141414;
+	transition: .5s;
+}
+
+.button:hover {
+	cursor: pointer;
+	opacity: .6;
+}
+
+.button_submit {
+	margin-right: 0;
+	background: #028902;
+}
+
+.button_reset {
+	margin-left: 0;
+	background: #a70303;
+}

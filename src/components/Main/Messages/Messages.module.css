@@ -4,6 +4,12 @@
     font-size: 18px;
 }
 
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .title {
     margin-bottom: 20px;
 }

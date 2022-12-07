@@ -1,6 +1,7 @@
 import React from 'react';
 import c from './Messages.module.css';
 import { NavLink } from "react-router-dom";
+import FormMessage from "./FormMessage/FormMessage";
 
 const DialogItems = (props) => {
     const path = '/messages/' + props.id;
@@ -28,6 +29,8 @@ const Messages = (props) => {
     const Dialogs = props.dialogs.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
     const Messages = props.messages.messages.map((m, index) => <MessageItems key={index} id={m.id} message={m.message} />);
 
+
+
     return (
             <div className='wrapper-component'>
                 <h2 className={c.title}>Messages</h2>
@@ -38,7 +41,12 @@ const Messages = (props) => {
                         </ul>
                     </div>
                     <div className={c.messages}>
-                        {Messages}
+                        <div className={c.messagesBlock}>
+                            {Messages}
+                        </div>
+                        <div className={c.formMessage}>
+                            <FormMessage />
+                        </div>
                     </div>
                 </div>
             </div>

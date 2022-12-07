@@ -9,7 +9,7 @@ const Wall = (props) => {
 	return (
 		<div className={classes.wall}>
 			<Title />
-			<FormWall />
+			<FormWall addPost={props.addPost} />
 			{Posts}
 		</div >
 	)

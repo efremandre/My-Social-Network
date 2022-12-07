@@ -7,7 +7,7 @@ const Body = (props) => {
 	return (
 		<div className={classes.body}>
 			<Info />
-			<Wall posts = {props.posts} />
+			<Wall posts = {props.posts} addPost={props.addPost} />
 		</div>
 	)
 }

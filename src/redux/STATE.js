@@ -1,3 +1,5 @@
+import {rerenderEntreTree} from "../render";
+
 const state = {
     profilePage: {
         posts: [
@@ -9,7 +11,7 @@ const state = {
     },
     messagesPage: {
         dialogs: [
-            {id: 1, name: 'Dymich', avatar: 'https://www.blast.hk/attachments/68493/',},
+            {id: 1, name: 'Dymich', avatar: 'https://kartinkin.net/uploads/posts/2022-02/thumbs/1645485890_21-kartinkin-net-p-top-kartinki-na-avu-24.jpg',},
             {id: 2, name: 'Andrey', avatar: 'https://www.youloveit.ru/uploads/posts/2020-04/1586360148_youloveit_ru_bill_gravity_falls_na_avu11.jpg',},
             {id: 3, name: 'Sveta', avatar: 'https://demotivation.ru/wp-content/uploads/2021/10/3-32.jpg',},
             {id: 4, name: 'Valera', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq7ktobmis68f6L18AowLqKzIAFN-16Je2q5v2fyaeW7e3M9EHZkPDxg9qPIYjpSWW4wE&usqp=CAU',},
@@ -23,6 +25,14 @@ const state = {
             {id: 4, message: 'I fine! Thank you!',},
         ],
     }
+}
+
+export const addPost = (postMessage) => {
+    const newPost = {
+    id: 5, name: 'New User', avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg', message: postMessage, likes: 0, dislikes: 0
+    };
+    state.profilePage.posts.push(newPost);
+    rerenderEntreTree(state);
 }
 
 export default state;

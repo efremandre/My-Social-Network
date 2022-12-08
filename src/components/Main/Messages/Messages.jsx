@@ -26,10 +26,8 @@ const MessageItems = (props) => {
 }
 
 const Messages = (props) => {
-    const Dialogs = props.dialogs.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
+    const Dialogs = props.messages.dialogs.map((d, index) => <DialogItems key={index} id={d.id} name={d.name} avatar={d.avatar} />);
     const Messages = props.messages.messages.map((m, index) => <MessageItems key={index} id={m.id} message={m.message} />);
-
-
 
     return (
             <div className='wrapper-component'>
@@ -41,11 +39,13 @@ const Messages = (props) => {
                         </ul>
                     </div>
                     <div className={c.messages}>
-                        <div className={c.messagesBlock}>
+                        <div className={c.messages_block}>
                             {Messages}
                         </div>
-                        <div className={c.formMessage}>
-                            <FormMessage />
+                        <div className={c.form_message}>
+                            <FormMessage newMessageText={props.messages.newMessageText}
+                                         addMessage={props.addMessage}
+                                         updateAddMessage={props.updateAddMessage}/>
                         </div>
                     </div>
                 </div>

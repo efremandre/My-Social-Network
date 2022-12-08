@@ -11,6 +11,7 @@ import Music from "./components/Main/Music/Music";
 import Setting from "./components/Main/Setting/Setting";
 
 const App = (props) => {
+
 	return (
 			<div className='wrapper'>
 				<div className='grid'>
@@ -18,8 +19,14 @@ const App = (props) => {
 					<Sidebar />
 					<div className="content">
 						<Routes>
-							<Route path='/profile/' element={<Profile posts={props.state.profilePage} addPost={props.addPost} />} />
-							<Route path='/messages/*' element={<Messages dialogs={props.state.messagesPage} messages={props.state.messagesPage} />} />
+							<Route path='/profile/'
+								   element={<Profile posts={props.state.profilePage}
+													 addPost={props.addPost}
+													 updateAddPost={props.updateAddPost}/>} />
+							<Route path='/messages/*'
+								   element={<Messages messages={props.state.messagesPage}
+													  addMessage={props.addMessage}
+													  updateAddMessage={props.updateAddMessage}/>} />
 							<Route path='/news/' element={<News />} />
 							<Route path='/music/' element={<Music />} />
 							<Route path='/setting/' element={<Setting />} />

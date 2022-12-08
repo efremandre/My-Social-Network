@@ -9,7 +9,9 @@ const Wall = (props) => {
 	return (
 		<div className={classes.wall}>
 			<Title />
-			<FormWall addPost={props.addPost} />
+			<FormWall addPost={props.addPost}
+					  newPostText={props.newPostText}
+					  updateAddPost={props.updateAddPost}/>
 			{Posts}
 		</div >
 	)

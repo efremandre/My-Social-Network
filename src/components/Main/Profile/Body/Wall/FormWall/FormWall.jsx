@@ -8,17 +8,29 @@ const FormWall = (props) => {
 	const addPost = () => {
 		let textPost = textArea.current.value;
 		props.addPost(textPost);
-		textArea.current.value = '';
+	}
+
+	const postChange = () => {
+		let textPost = textArea.current.value;
+		props.updateAddPost(textPost);
 	}
 
 	return (
 		<form className={classes.form} >
 			<div className={classes.textarea_block}>
-				<textarea className={classes.textarea} name="post" rows="3" placeholder='Enter new post...' ref={textArea} ></textarea>
+				<textarea className={classes.textarea}
+						  ref={textArea}
+						  onChange={postChange}
+						  name="post" rows="3"
+						  placeholder='Enter new post...'
+						  value={props.newPostText}/>
 				<input className={classes.button_reset} type="reset" value="x" />
 			</div>
 			<div className={classes.button_row}>
-				<input className={`${classes.button} ${classes.button_submit}`} type="button" value="Submit" onClick={addPost} />
+				<input className={`${classes.button} ${classes.button_submit}`}
+					   onClick={addPost}
+					   type="button"
+					   value="Submit"  />
 			</div>
 		</form>
 	)

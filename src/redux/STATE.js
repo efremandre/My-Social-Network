@@ -1,4 +1,6 @@
-import {rerenderEntreTree} from "../render";
+let rerenderEntreTree = () => {
+    console.log('State changed')
+}
 
 const state = {
     profilePage: {
@@ -63,6 +65,10 @@ export const addMessage = () => {
 export const updateAddMessage = (text) => {
     state.messagesPage.newMessageText = text;
     rerenderEntreTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntreTree = observer; // патерн наблюдатель - observer
 }
 
 export default state;

@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_ADD_POST = 'UPDATE-ADD-POST';
+const UPDATE_ADD_MESSAGE = 'UPDATE-ADD-MESSAGE';
+
 const store = {
     _state: {
         profilePage: {
@@ -37,7 +42,7 @@ const store = {
         this._callSubscriber = observer; // патерн наблюдатель - observer
     },
     dispatch(action) { // { type: 'ADD-POST'}
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             const newPost = {
                 id: 5,
                 name: 'New User',
@@ -50,10 +55,10 @@ const store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-ADD-POST') {
+        } else if (action.type === UPDATE_ADD_POST) {
             this._state.profilePage.newPostText = action.text;
             this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
+        } else if (action.type === ADD_MESSAGE) {
             const newMessage = {
                 id: 4,
                 message: this._state.messagesPage.newMessageText,
@@ -62,12 +67,17 @@ const store = {
             this._state.messagesPage.messages.push(newMessage);
             this._state.messagesPage.newMessageText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-ADD-MESSAGE') {
+        } else if (action.type === UPDATE_ADD_MESSAGE) {
             this._state.messagesPage.newMessageText = action.text;
             this._callSubscriber(this._state);
         }
     }
 }
+
+export const addPostCreateAction = () => ({type: ADD_POST});
+export const updatePostCreateAction = (text) => ({type: UPDATE_ADD_POST, text: text});
+export const addMessageCreateAction = () => ({type: ADD_MESSAGE});
+export const updateMessageCreateAction = (text) => ({type: UPDATE_ADD_MESSAGE, text: text});
 
 export default store;
 window.store = store;

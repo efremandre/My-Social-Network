@@ -1,17 +1,20 @@
 import React from 'react';
 import classes from './FormWall.module.css';
+import {addPostCreateAction, updatePostCreateAction} from "../../../../../../redux/STATE";
 
 const FormWall = (props) => {
 
 	const textArea = React.createRef();
 
 	const addPost = () => {
-		props.dispatch({type: 'ADD-POST'});
+		const action = addPostCreateAction();
+		props.dispatch(action);
 	}
 
 	const postChange = () => {
-		let textPost = textArea.current.value;
-		props.dispatch({type: 'UPDATE-ADD-POST', text: textPost});
+		const textPost = textArea.current.value;
+		const action = updatePostCreateAction(textPost);
+		props.dispatch(action);
 	}
 
 	return (

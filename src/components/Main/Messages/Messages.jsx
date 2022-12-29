@@ -44,8 +44,7 @@ const Messages = (props) => {
                         </div>
                         <div className={c.form_message}>
                             <FormMessage newMessageText={props.messages.newMessageText}
-                                         addMessage={props.addMessage}
-                                         updateAddMessage={props.updateAddMessage}/>
+                                         dispatch = {props.dispatch}/>
                         </div>
                     </div>
                 </div>

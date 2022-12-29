@@ -33,41 +33,40 @@ const store = {
     _callSubscriber() {
         console.log('State changed')
     },
-    addPost() {
-        const newPost = {
-            id: 5,
-            name: 'New User',
-            avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg',
-            message: this._state.profilePage.newPostText,
-            likes: 0,
-            dislikes: 0
-        };
-
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateAddPost(text) {
-        this._state.profilePage.newPostText = text;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-        const newMessage = {
-            id: 4,
-            message: this._state.messagesPage.newMessageText,
-        };
-
-        this._state.messagesPage.messages.push(newMessage);
-        this._state.messagesPage.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-    updateAddMessage(text) {
-        this._state.messagesPage.newMessageText = text;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer; // патерн наблюдатель - observer
     },
+    dispatch(action) { // { type: 'ADD-POST'}
+        if (action.type === 'ADD-POST') {
+            const newPost = {
+                id: 5,
+                name: 'New User',
+                avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg',
+                message: this._state.profilePage.newPostText,
+                likes: 0,
+                dislikes: 0
+            };
+
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-ADD-POST') {
+            this._state.profilePage.newPostText = action.text;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'ADD-MESSAGE') {
+            const newMessage = {
+                id: 4,
+                message: this._state.messagesPage.newMessageText,
+            };
+
+            this._state.messagesPage.messages.push(newMessage);
+            this._state.messagesPage.newMessageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-ADD-MESSAGE') {
+            this._state.messagesPage.newMessageText = action.text;
+            this._callSubscriber(this._state);
+        }
+    }
 }
 
 export default store;

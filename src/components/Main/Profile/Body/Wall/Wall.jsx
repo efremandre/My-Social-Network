@@ -9,9 +9,8 @@ const Wall = (props) => {
 	return (
 		<div className={classes.wall}>
 			<Title />
-			<FormWall addPost={props.addPost}
-					  newPostText={props.newPostText}
-					  updateAddPost={props.updateAddPost}/>
+			<FormWall dispatch={props.dispatch}
+					  newPostText={props.newPostText}/>
 			{Posts}
 		</div >
 	)

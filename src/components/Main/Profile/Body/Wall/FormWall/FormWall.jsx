@@ -6,13 +6,12 @@ const FormWall = (props) => {
 	const textArea = React.createRef();
 
 	const addPost = () => {
-		let textPost = textArea.current.value;
-		props.addPost(textPost);
+		props.dispatch({type: 'ADD-POST'});
 	}
 
 	const postChange = () => {
 		let textPost = textArea.current.value;
-		props.updateAddPost(textPost);
+		props.dispatch({type: 'UPDATE-ADD-POST', text: textPost});
 	}
 
 	return (

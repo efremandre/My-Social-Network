@@ -11,10 +11,7 @@ export const rerenderEntreTree = (state) => {
     root.render(
         <BrowserRouter>
             <App state={state}
-                 addPost={store.addPost.bind(store)}
-                 updateAddPost={store.updateAddPost.bind(store)}
-                 addMessage={store.addMessage.bind(store)}
-                 updateAddMessage={store.updateAddMessage.bind(store)}/>
+                 dispatch = {store.dispatch.bind(store)}/>
         </BrowserRouter>
     );
 }

@@ -8,9 +8,8 @@ const Body = (props) => {
 		<div className={classes.body}>
 			<Info />
 			<Wall posts = {props.posts}
-				  addPost={props.addPost}
 				  newPostText={props.newPostText}
-				  updateAddPost={props.updateAddPost}/>
+				  dispatch={props.dispatch}/>
 		</div>
 	)
 }

@@ -6,13 +6,13 @@ const FormMessage = (props) => {
 	const textAreaMessage = React.createRef();
 
 	const addMessage = () => {
-		let textMessage = textAreaMessage.current.value;
-		props.addMessage(textMessage);
+		props.dispatch({type: 'ADD-MESSAGE'});
 	}
 
 	const changeMessageText = () => {
 		let textMessage = textAreaMessage.current.value;
-		props.updateAddMessage(textMessage)
+		const action = {type: 'UPDATE-ADD-MESSAGE', text: textMessage};
+		props.dispatch(action);
 	}
 
 	return (

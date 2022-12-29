@@ -4,7 +4,7 @@ import classes from './Info.module.css';
 const Info = () => {
 	return (
 		<div className={classes.info}>
-			ava+desc
+			ava+name
 		</div>
 	)
 }

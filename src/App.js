@@ -11,7 +11,6 @@ import Music from "./components/Main/Music/Music";
 import Setting from "./components/Main/Setting/Setting";
 
 const App = (props) => {
-
 	return (
 			<div className='wrapper'>
 				<div className='grid'>

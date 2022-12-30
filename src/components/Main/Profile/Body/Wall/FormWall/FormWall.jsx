@@ -1,9 +1,8 @@
 import React from 'react';
 import classes from './FormWall.module.css';
-import {addPostCreateAction, updatePostCreateAction} from "../../../../../../redux/profile-reducer";
+import {addPostCreateAction, resetText, updatePostCreateAction} from "../../../../../../redux/profile-reducer";
 
 const FormWall = (props) => {
-
 	const textArea = React.createRef();
 
 	const addPost = () => {
@@ -17,6 +16,12 @@ const FormWall = (props) => {
 		props.dispatch(action);
 	}
 
+	const getReset = () => {
+		const textPost = textArea.current.value;
+		const action = resetText(textPost);
+		props.dispatch(action);
+	}
+
 	return (
 		<form className={classes.form} >
 			<div className={classes.textarea_block}>
@@ -26,7 +31,10 @@ const FormWall = (props) => {
 						  name="post" rows="3"
 						  placeholder='Enter new post...'
 						  value={props.newPostText}/>
-				<input className={classes.button_reset} type="reset" value="x" />
+				<input className={classes.button_reset}
+					   onClick={getReset}
+					   type="reset"
+					   value="x" />
 			</div>
 			<div className={classes.button_row}>
 				<input className={`${classes.button} ${classes.button_submit}`}

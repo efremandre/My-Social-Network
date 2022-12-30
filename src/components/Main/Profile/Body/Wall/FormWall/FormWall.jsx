@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './FormWall.module.css';
-import {addPostCreateAction, updatePostCreateAction} from "../../../../../../redux/STATE";
+import {addPostCreateAction, updatePostCreateAction} from "../../../../../../redux/profile-reducer";
 
 const FormWall = (props) => {
 

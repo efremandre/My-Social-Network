@@ -1,7 +1,7 @@
-const ADD_POST = 'ADD-POST';
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_ADD_POST = 'UPDATE-ADD-POST';
-const UPDATE_ADD_MESSAGE = 'UPDATE-ADD-MESSAGE';
+import profileReducer from "./profile-reducer";
+
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 
 const store = {
     _state: {
@@ -41,24 +41,10 @@ const store = {
     subscribe(observer) {
         this._callSubscriber = observer; // патерн наблюдатель - observer
     },
-    dispatch(action) { // { type: 'ADD-POST'}
-        if (action.type === ADD_POST) {
-            const newPost = {
-                id: 5,
-                name: 'New User',
-                avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg',
-                message: this._state.profilePage.newPostText,
-                likes: 0,
-                dislikes: 0
-            };
-
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_ADD_POST) {
-            this._state.profilePage.newPostText = action.text;
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_MESSAGE) {
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._callSubscriber(this._state);
+    if (action.type === SEND_MESSAGE) {
             const newMessage = {
                 id: 4,
                 message: this._state.messagesPage.newMessageText,
@@ -67,17 +53,14 @@ const store = {
             this._state.messagesPage.messages.push(newMessage);
             this._state.messagesPage.newMessageText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_ADD_MESSAGE) {
+        } else if (action.type === UPDATE_NEW_MESSAGE) {
             this._state.messagesPage.newMessageText = action.text;
             this._callSubscriber(this._state);
         }
     }
 }
-
-export const addPostCreateAction = () => ({type: ADD_POST});
-export const updatePostCreateAction = (text) => ({type: UPDATE_ADD_POST, text: text});
-export const addMessageCreateAction = () => ({type: ADD_MESSAGE});
-export const updateMessageCreateAction = (text) => ({type: UPDATE_ADD_MESSAGE, text: text});
+export const sendMessageCreate = () => ({type: SEND_MESSAGE});
+export const updateNewMessageCreate = (text) => ({type: UPDATE_NEW_MESSAGE, text: text});
 
 export default store;
 window.store = store;

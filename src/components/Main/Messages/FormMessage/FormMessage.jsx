@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './FormMessage.module.css';
-import {sendMessageCreate, updateNewMessageCreate} from "../../../../redux/store";
+import {sendMessageCreate, updateNewMessageCreate} from "../../../../redux/message-reducer";
 
 const FormMessage = (props) => {
 

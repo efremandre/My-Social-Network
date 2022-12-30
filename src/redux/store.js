@@ -1,7 +1,5 @@
 import profileReducer from "./profile-reducer";
-
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
+import messageReducer from "./message-reducer";
 
 const store = {
     _state: {
@@ -43,24 +41,10 @@ const store = {
     },
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action);
         this._callSubscriber(this._state);
-    if (action.type === SEND_MESSAGE) {
-            const newMessage = {
-                id: 4,
-                message: this._state.messagesPage.newMessageText,
-            };
-
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE) {
-            this._state.messagesPage.newMessageText = action.text;
-            this._callSubscriber(this._state);
-        }
     }
 }
-export const sendMessageCreate = () => ({type: SEND_MESSAGE});
-export const updateNewMessageCreate = (text) => ({type: UPDATE_NEW_MESSAGE, text: text});
 
 export default store;
 window.store = store;

@@ -1,5 +1,5 @@
-import profileReducer from "./profile-reducer";
-import messageReducer from "./message-reducer";
+// import profileReducer from "./profile-reducer";
+// import messageReducer from "./message-reducer";
 
 const store = {
     _state: {
@@ -46,5 +46,5 @@ const store = {
     }
 }
 
-export default store;
-window.store = store;
+// export default store;
+// window.store = store;
